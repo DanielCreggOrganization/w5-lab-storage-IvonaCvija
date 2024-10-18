@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { StorageService } from '../services/storage.service';
-import { Storage } from '@ionic/storage-angular';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 

@@ -15,5 +15,12 @@
   </ion-item>
   <ion-button expand="full" (click)="setItem()">Set Item</ion-button>
   <ion-button expand="full" (click)="getItem()">Get Item</ion-button>
+  <ion-button expand="full" (click)="removeItem()">Remove Item</ion-button>
+  <ion-button expand="full" (click)="clearAll()">Clear all items</ion-button>
+  <ion-button expand="full" (click)="retrieveAllKeys()">Retrieve all keys</ion-button>
+  <ion-button expand="full" (click)="getNumberOfItems()">Count Item</ion-button>
+  <ion-button expand="full" (click)="iterateOverItems()">Iterate over items</ion-button>
+  
+  <ion-button expand="full" routerLink="/movies">Go to Movies</ion-button>
   <p>{{ output }}</p>
 </ion-content>

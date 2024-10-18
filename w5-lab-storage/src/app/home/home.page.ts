@@ -39,27 +39,27 @@ export class HomePage {
     }
   }
 
-  async removeItem(){
+  async removeItem() {
     try {
       const value = await this.storage.remove(this.key);
-      this.output = `Remove ${this.key}: ${value}`;
+      this.output = `Removed ${this.key}`;
     } catch (error) {
       console.error('Error removing item', error);
       this.output = `Error removing item: ${error}`;
     }
   }
 
-  async clearAll(){
+  async clearAll() {
     try {
-      const value = await this.storage.clear();;
-      this.output = `Clear all ${this.key}: ${value}`;
+      await this.storage.clear();;
+      this.output = `Cleared all`;
     } catch (error) {
       console.error('Error clearing all items', error);
       this.output = `Error clearing all items: ${error}`;
     }
   }
 
-  async retrieveAllKeys(){
+  async retrieveAllKeys() {
     try {
       const keys = await this.storage.keys();
       this.output = `Retrieve ${this.key}: ${keys}`;
@@ -69,13 +69,26 @@ export class HomePage {
     }
   }
 
-  async getNumberOfItems(){
+  async getNumberOfItems() {
     try {
       const length = await this.storage.length();
-      this.output = `Remove ${this.key}: ${length}`;
+      this.output = `Get number of items ${this.key}: ${length}`;
     } catch (error) {
       console.error('Error getting number of items', error);
       this.output = `Error getting number of items: ${error}`;
     }
   }
+
+  async iterateOverItems() {
+    try {
+      await this.storage.forEach((key, value, index) => {
+        console.log(`Item ${index}: ${key} = ${value}`);
+      });
+      this.output = `Successfully iterated over items`;
+    } catch (error) {
+      console.error('Error removing item', error);
+      this.output = `Error removing item: ${error}`;
+    }
+  }
+
 }
